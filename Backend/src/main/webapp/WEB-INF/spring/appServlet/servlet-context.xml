@@ -10,6 +10,8 @@ http://www.springframework.org/schema/beans/spring-beans.xsd
 http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context.xsd">
 
+	<context:property-placeholder ignore-unresolvable="false" />
+
 	<context:component-scan
 		base-package="com.app.controller"></context:component-scan>
 	<context:component-scan
@@ -25,7 +27,7 @@ http://www.springframework.org/schema/context/spring-context.xsd">
 		<beans:property name="suffix" value=".jsp"></beans:property>
 	</beans:bean>
 
-	<resources location="file:///D:/fileStorage/"
+	<resources location="${LQ_FILE_STORAGE}"
 		mapping="/fileStorage/**" />
 	<resources location="/resources/" mapping="/**"></resources>
 <!-- 	<resources location="/resources/static/css/" mapping="/css/**" /> -->
