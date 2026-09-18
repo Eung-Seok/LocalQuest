@@ -18,15 +18,14 @@ import io.jsonwebtoken.security.Keys;
 @Component
 public class JwtTokenProvider {
 	private static final long ACCESS_TOKEN_EXPIRE_MS = 1000L * 60 * 60 * 24; // 24시간
-	private static final String DEFAULT_SECRET = "LocalQuestJwtSecretKey_ChangeThisInProduction_2026";
 	private final SecretKey secretKey;
 
 	public JwtTokenProvider() {
 		String secret = System.getenv("LQ_JWT_SECRET");
 		if (secret == null || secret.trim().length() < 32) {
-			secret = DEFAULT_SECRET;
+			throw new IllegalStateException("LQ_JWT_SECRET 환경변수는 32자 이상이어야 합니다.");
 		}
-		this.secretKey = Keys.hmacShaKeyFor(secret.getBytes(StandardCharsets.UTF_8));
+		this.secretKey = Keys.hmacShaKeyFor(secret.trim().getBytes(StandardCharsets.UTF_8));
 	}
 
 	public String createAccessToken(User user) {
