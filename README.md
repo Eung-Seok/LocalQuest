@@ -131,6 +131,18 @@ npm start
 
 개발 서버는 `http://localhost:3000`, API 프록시는 `http://localhost:8080`을 사용합니다.
 
+### 환경변수
+
+| 변수 | 용도 |
+|---|---|
+| `DB_URL` | Oracle JDBC URL |
+| `DB_USERNAME` | Oracle 사용자 이름 |
+| `DB_PASSWORD` | Oracle 비밀번호 |
+| `LQ_JWT_SECRET` | JWT 서명 키(32자 이상) |
+| `LQ_FILE_STORAGE` | 업로드 파일 저장 URI(예: `file:///tmp/localquest/`) |
+
+실제 접속 정보와 서명 키는 저장소에 커밋하지 않고 실행 환경에서 주입합니다.
+
 ## 프로젝트 포인트
 
 - 사용자·사업자·관리자의 서로 다른 흐름을 하나의 도메인 구조로 연결했습니다.
