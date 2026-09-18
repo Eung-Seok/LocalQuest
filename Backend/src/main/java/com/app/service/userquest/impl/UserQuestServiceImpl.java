@@ -61,8 +61,11 @@ public class UserQuestServiceImpl implements UserQuestService {
 
     private static final Logger log = LoggerFactory.getLogger(UserQuestServiceImpl.class);
 
-    private static final String OCR_VERIFY_URL = "http://localhost:8000/ocr";
-    private static final Path RECEIPT_UPLOAD_DIR = Paths.get("D:/fileStorage");
+    private static final String OCR_VERIFY_URL = getEnvironmentValue(
+        "LQ_OCR_VERIFY_URL", "http://localhost:8000/ocr");
+    private static final Path RECEIPT_UPLOAD_DIR = Paths.get(getEnvironmentValue(
+        "LQ_RECEIPT_STORAGE_DIR",
+        Paths.get(System.getProperty("java.io.tmpdir"), "localquest-receipts").toString()));
     private static final String QUEST_STATUS_ACTIVE = "ACTIVE";
     private static final String QUEST_STATUS_DELETED = "DELETED";
     private static final String USER_QUEST_STATUS_SAVED = "SAVED";
@@ -76,6 +79,11 @@ public class UserQuestServiceImpl implements UserQuestService {
     private static final String LOCATION_TYPE_PURCHASE = "PURCHASE";
     private static final String BUSINESS_AUTH_TYPE_QR = "QR";
     private static final double GPS_VERIFY_RADIUS_METERS = 50.0;
+
+    private static String getEnvironmentValue(String name, String defaultValue) {
+        String value = System.getenv(name);
+        return value == null || value.trim().isEmpty() ? defaultValue : value.trim();
+    }
 
     @Autowired
     private UserQuestDAO userQuestDAO;
