@@ -140,6 +140,8 @@ npm start
 | `DB_PASSWORD` | Oracle 비밀번호 |
 | `LQ_JWT_SECRET` | JWT 서명 키(32자 이상) |
 | `LQ_FILE_STORAGE` | 업로드 파일 저장 URI(예: `file:///tmp/localquest/`) |
+| `LQ_RECEIPT_STORAGE_DIR` | 영수증 이미지 저장 디렉터리(선택) |
+| `LQ_OCR_VERIFY_URL` | OCR 검증 API 주소(선택, 기본값: `http://localhost:8000/ocr`) |
 
 실제 접속 정보와 서명 키는 저장소에 커밋하지 않고 실행 환경에서 주입합니다.
 
