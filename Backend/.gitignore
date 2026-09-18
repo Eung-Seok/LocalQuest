@@ -140,3 +140,8 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,eclipse,java,maven
 src/main/resources/mail.properties
+
+
+# Local syntax/compile checks
+.javac*.txt
+admin-js-syntax-check*.tmp.js
