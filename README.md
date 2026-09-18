@@ -1,5 +1,7 @@
 # LocalQuest
 
+[![CI](https://github.com/Eung-Seok/LocalQuest/actions/workflows/ci.yml/badge.svg?branch=portfolio-v2)](https://github.com/Eung-Seok/LocalQuest/actions/workflows/ci.yml?query=branch%3Aportfolio-v2)
+
 > 지역 상권을 퀘스트·QR 인증·리워드로 연결하는 참여형 로컬 플랫폼
 
 ## 프로젝트 소개
