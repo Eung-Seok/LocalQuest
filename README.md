@@ -35,6 +35,26 @@ LocalQuest는 사용자가 지역의 장소를 탐색하고 퀘스트를 수행�
 - 문의 승인부터 매장 등록까지 이어지는 관리자 처리 흐름
 - Business DAO–Service–Controller와 관리자 JSP 화면 연동
 
+## 담당 화면
+
+원본 관리자 JSP·CSS 구조를 기준으로 포트폴리오용 대표 데이터를 표시했습니다.
+
+### 관리자 공지사항 목록·검색·CRUD
+
+![관리자 공지사항 관리](docs/images/localquest-admin-notice.svg)
+
+### 공지 등록·수정
+
+![관리자 공지 등록](docs/images/localquest-admin-notice-form.svg)
+
+### 사업자 문의 처리
+
+![사업자 문의 관리](docs/images/localquest-business-inquiries.svg)
+
+### 문의 승인 → 매장 등록
+
+![문의 승인 및 매장 등록](docs/images/localquest-store-registration.svg)
+
 ## 시스템 구조
 
 ~~~mermaid
